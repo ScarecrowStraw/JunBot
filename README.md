@@ -187,7 +187,7 @@ Find this "/usr/include/opencv" and change to "/usr/include/opencv4"
 [Here](https://github.com/Livox-SDK/livox_ros_driver)
 
 ### Step 6: Livox-Camera-Calibration
-Follow [here](https://github.com/lacie-life/TBot/tree/main/livox_camera_lidar_calibration#readme)
+Follow [here](https://github.com/lacie-life/JunBot/tree/main/livox_camera_lidar_calibration#readme)
 
 ### Step 7: Pending ...
 
