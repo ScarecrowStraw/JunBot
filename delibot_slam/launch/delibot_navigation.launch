@@ -1,0 +1,35 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="map_file" default="$(find delibot_slam)/maps/map_406.yaml"/>
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- Turtlebot3 -->
+
+  <include file="$(find turtleUET)/launch/teleop.launch" >
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find delibot_slam)/urdf/turtlebot3.urdf.xacro'" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find delibot_slam)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find delibot_slam)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" 
+	name="camera_link_custom_tf_broadcaster" 
+	args="0.05 0 0.20 0 0 0 1 odom zed_odom 100" />
+
+  <!-- rviz -->
+  <!-- <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find delibot_slam)/rviz/turtlebot3_navigation.rviz"/>   
+  </group> -->
+</launch>

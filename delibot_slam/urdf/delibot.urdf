@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="delibot_slam">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0022325 -0.0020338 -0.75741"
+        rpy="0 0 0" />
+      <mass
+        value="6.9625" />
+      <inertia
+        ixx="0.097957"
+        ixy="-6.4175E-07"
+        ixz="-1.1798E-07"
+        iyy="0.093258"
+        iyz="5.0592E-05"
+        izz="0.02273" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_L1">
+    <inertial>
+      <origin
+        xyz="4.8989E-05 0.002766 0.034352"
+        rpy="0 0 0" />
+      <mass
+        value="0.40814" />
+      <inertia
+        ixx="0.00058922"
+        ixy="-5.3929E-07"
+        ixz="-9.126E-07"
+        iyy="0.00045995"
+        iyz="-2.8438E-05"
+        izz="0.00051861" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_L1"
+    type="revolute">
+    <origin
+      xyz="-0.089733 -0.00053275 -0.071898"
+      rpy="1.5708 1.563 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_L1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="0"
+      effort="6"
+      velocity="7.47" />
+  </joint>
+  <link
+    name="link_L2">
+    <inertial>
+      <origin
+        xyz="0.11352 8.2932E-06 -0.043652"
+        rpy="0 0 0" />
+      <mass
+        value="0.60548" />
+      <inertia
+        ixx="0.00053136"
+        ixy="1.1318E-07"
+        ixz="5.4777E-06"
+        iyy="0.0010439"
+        iyz="-2.4727E-08"
+        izz="0.0010658" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_L2"
+    type="revolute">
+    <origin
+      xyz="0 -0.042022 0.0675"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_L1" />
+    <child
+      link="link_L2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="6"
+      velocity="7.47" />
+  </joint>
+  <link
+    name="link_L3">
+    <inertial>
+      <origin
+        xyz="0.062478 -0.0001814 -0.036523"
+        rpy="0 0 0" />
+      <mass
+        value="0.28375" />
+      <inertia
+        ixx="0.00016881"
+        ixy="5.4727E-08"
+        ixz="3.486E-06"
+        iyy="0.00020948"
+        iyz="-2.1493E-08"
+        izz="0.00020397" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_L3"
+    type="revolute">
+    <origin
+      xyz="0.22997 7.5018E-05 -0.0078501"
+      rpy="0.0029006 0 0" />
+    <parent
+      link="link_L2" />
+    <child
+      link="link_L3" />
+    <axis
+      xyz="0 0.0050348 0.99999" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_L4">
+    <inertial>
+      <origin
+        xyz="0.067879 -0.00011993 -0.032046"
+        rpy="0 0 0" />
+      <mass
+        value="0.30348" />
+      <inertia
+        ixx="0.00021482"
+        ixy="2.1519E-08"
+        ixz="5.4602E-08"
+        iyy="0.00019097"
+        iyz="4.2746E-07"
+        izz="0.00019215" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_L4"
+    type="revolute">
+    <origin
+      xyz="0.09825 0 0"
+      rpy="7.6237E-05 -6.2372E-05 -0.012388" />
+    <parent
+      link="link_L3" />
+    <child
+      link="link_L4" />
+    <axis
+      xyz="0 0.0051106 0.99999" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="2"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_L5">
+    <inertial>
+      <origin
+        xyz="-0.0032484 -8.3263E-08 0.0074802"
+        rpy="0 0 0" />
+      <mass
+        value="0.03175" />
+      <inertia
+        ixx="1.2586E-05"
+        ixy="-4.116E-11"
+        ixz="6.6927E-07"
+        iyy="1.4878E-05"
+        iyz="-2.3282E-11"
+        izz="2.2965E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_L5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_L5"
+    type="revolute">
+    <origin
+      xyz="0.12075 -0.00017121 -0.0335"
+      rpy="-1.5708 -1.5587 -1.5708" />
+    <parent
+      link="link_L4" />
+    <child
+      link="link_L5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1.5"
+      velocity="4" />
+  </joint>
+  <link
+    name="l_LEnd">
+    <inertial>
+      <origin
+        xyz="-0.0022923 -6.1164E-05 -0.0033154"
+        rpy="0 0 0" />
+      <mass
+        value="0.12712" />
+      <inertia
+        ixx="3.9103E-05"
+        ixy="2.3622E-06"
+        ixz="-4.2203E-07"
+        iyy="8.5295E-05"
+        iyz="-5.5207E-09"
+        izz="6.8515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/l_LEnd.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/l_LEnd.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_LEnd"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0595"
+      rpy="0 0 0" />
+    <parent
+      link="link_L5" />
+    <child
+      link="l_LEnd" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_R1">
+    <inertial>
+      <origin
+        xyz="0.00023536 -0.002766 0.034357"
+        rpy="0 0 0" />
+      <mass
+        value="0.40814" />
+      <inertia
+        ixx="0.00058922"
+        ixy="-5.952E-07"
+        ixz="9.126E-07"
+        iyy="0.00045995"
+        iyz="2.8439E-05"
+        izz="0.00051861" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_R1"
+    type="revolute">
+    <origin
+      xyz="0.085711 -0.00053275 -0.071898"
+      rpy="-1.5708 1.563 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_R1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="6"
+      velocity="7" />
+  </joint>
+  <link
+    name="link_R2">
+    <inertial>
+      <origin
+        xyz="0.11352 8.2932E-06 -0.043652"
+        rpy="0 0 0" />
+      <mass
+        value="0.60548" />
+      <inertia
+        ixx="0.00053136"
+        ixy="1.1318E-07"
+        ixz="5.4777E-06"
+        iyy="0.0010439"
+        iyz="-2.4727E-08"
+        izz="0.0010658" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_R2"
+    type="revolute">
+    <origin
+      xyz="0 0.042022 0.0675"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_R1" />
+    <child
+      link="link_R2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="0"
+      effort="6"
+      velocity="7" />
+  </joint>
+  <link
+    name="link_R3">
+    <inertial>
+      <origin
+        xyz="0.062478 -0.0001814 -0.036523"
+        rpy="0 0 0" />
+      <mass
+        value="0.28375" />
+      <inertia
+        ixx="0.00016881"
+        ixy="5.4727E-08"
+        ixz="3.486E-06"
+        iyy="0.00020948"
+        iyz="-2.1493E-08"
+        izz="0.00020397" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_R3"
+    type="revolute">
+    <origin
+      xyz="0.22997 7.5018E-05 -0.0078501"
+      rpy="0.0029006 0 0" />
+    <parent
+      link="link_R2" />
+    <child
+      link="link_R3" />
+    <axis
+      xyz="0 0.0050348 0.99999" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_R4">
+    <inertial>
+      <origin
+        xyz="0.067879 -0.00010907 -0.030548"
+        rpy="0 0 0" />
+      <mass
+        value="0.30348" />
+      <inertia
+        ixx="0.00021482"
+        ixy="2.1013E-08"
+        ixz="5.5404E-08"
+        iyy="0.00019097"
+        iyz="4.2756E-07"
+        izz="0.00019214" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_R4"
+    type="revolute">
+    <origin
+      xyz="0.09825 0 -0.0015"
+      rpy="0 0 0" />
+    <parent
+      link="link_R3" />
+    <child
+      link="link_R4" />
+    <axis
+      xyz="0 0.0050348 0.99999" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="2"
+      velocity="5" />
+  </joint>
+  <link
+    name="link_R5">
+    <inertial>
+      <origin
+        xyz="-0.0032484 -8.4238E-08 0.0074802"
+        rpy="0 0 0" />
+      <mass
+        value="0.03175" />
+      <inertia
+        ixx="1.2586E-05"
+        ixy="-4.133E-11"
+        ixz="6.6927E-07"
+        iyy="1.4878E-05"
+        iyz="-2.3201E-11"
+        izz="2.2965E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_R5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_R5"
+    type="revolute">
+    <origin
+      xyz="0.12075 -0.00016111 -0.032"
+      rpy="-1.5708 -1.5586 -1.5708" />
+    <parent
+      link="link_R4" />
+    <child
+      link="link_R5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1.5"
+      velocity="4" />
+  </joint>
+  <link
+    name="link_REnd">
+    <inertial>
+      <origin
+        xyz="-0.0028509 6.3831E-05 -0.0033154"
+        rpy="0 0 0" />
+      <mass
+        value="0.12712" />
+      <inertia
+        ixx="3.9103E-05"
+        ixy="2.3622E-06"
+        ixz="-4.2203E-07"
+        iyy="8.5295E-05"
+        iyz="-5.5148E-09"
+        izz="6.8515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_REnd.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delibot_slam/meshes/link_REnd.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_REnd"
+    type="fixed">
+    <origin
+      xyz="0.00075 -0.000125 0.0595"
+      rpy="0 0 0" />
+    <parent
+      link="link_R5" />
+    <child
+      link="link_REnd" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

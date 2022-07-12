@@ -1,0 +1,34 @@
+<launch>
+
+  <include file="$(find turtleUET)/launch/teleop.launch" >
+    <arg name="key" value="true" />
+  </include>
+
+  <arg name="model" />
+  <arg name="gui" default="False" />
+
+  <param name="use_gui" value="$(arg gui)" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+		<!-- Load robot description and start state publisher-->
+    <!-- <param name="robot_description" textfile="$(find delibot_slam)/urdf/head_2d.urdf" /> -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find delibot_slam)/urdf/turtlebot3.urdf.xacro'" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+		
+		<!-- Start RPLIDAR sensor node which provides LaserScan data  -->
+    <!-- <node name="urg_node" pkg="urg_node" type="urg_node" output="screen">
+      <param name="_ip_address" value="192.168.0.10"/>
+    </node> -->
+  
+		<!-- Start Google Cartographer node with custom configuration file-->
+    <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
+          -configuration_directory
+              $(find delibot_slam)/configuration_files
+          -configuration_basename delibot_lidar_2d.lua" output="screen">
+    </node>
+
+		<!-- Additional node which converts Cartographer map into ROS occupancy grid map. Not used and can be skipped in this case -->
+    <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros" type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+    
+</launch>
