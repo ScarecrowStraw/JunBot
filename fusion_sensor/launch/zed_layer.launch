@@ -1,0 +1,30 @@
+<launch>
+  <arg name="cloud_in" default="/semantic_pcl/semantic_pcl"/>
+  <arg name="scan" default="camera/scan"/>
+
+  <!-- Zed node -->
+  <include file="$(find zed_wrapper)/launch/zed2.launch" >
+  </include>
+
+  <node name="zed_point_prj" pkg="fusion_sensor" type="zed_point_sub.py" />
+
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" >
+    <remap from="cloud_in" to="$(arg cloud_in)" />
+    <remap from="scan" to="$(arg scan)" />
+    <rosparam>
+      target_frame: base_link_zed
+      min_height: 0.0
+      max_height: 1.0
+
+      angle_min: -1.5
+      angle_max: 1.5
+
+      range_min: 0.5
+      range_max: 1.5
+
+    </rosparam>
+  </node>
+
+  <!-- <node name="rviz" pkg="rviz" type="rviz" /> -->
+
+</launch>
