@@ -1,0 +1,26 @@
+<launch>
+    <arg name="joy" default="true"/>
+    <arg name="joydev" default="/dev/input/js0"/>
+    <arg name="key" default="true"/>
+    <arg name="speed" default="0.3"/>
+
+    <!--Start turtlebot3-->
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch" />
+
+    <!--control base robot using joystick -->
+    <!-- <group if="$(arg joy)"> -->
+        <!--init joy node control ROS-->
+        <!-- <node name="joy_core" pkg="joy" type="joy_node" required="true">
+            <param name="dev" type="string" value="$(arg joydev)"/>
+        </node>
+
+        <node pkg="turtleUET" name="joystick" type="joystick_control.py" required="true" output="screen">
+            <rosparam command="load" file="$(find turtleUET)/config/joy_f710.yml" />
+        </node>
+    </group> -->
+
+    <!--control base robot using key board-->
+    <!-- <group if="$(arg key)">
+        <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="_speed:=$(arg speed)" output="screen"/>
+    </group> -->
+</launch>

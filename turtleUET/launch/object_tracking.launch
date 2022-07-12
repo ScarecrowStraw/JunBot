@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="cv_camera" name="cv_camera" type="cv_camera_node" required="true" />
+  <node pkg="web_video_server" name="web_video_server" type="web_video_server" required="true" />
+  <node pkg="turtleUET" name="object_tracking" type="object_tracking.py" required="true" />
+</launch>
